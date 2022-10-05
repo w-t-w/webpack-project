@@ -17,11 +17,12 @@ const babelConfig = {
     plugins: [
         '@babel/plugin-proposal-class-properties',
         [
-            '@babel/plugin-transform-decorators',
+            '@babel/plugin-proposal-decorators',
             {
                 legacy: true
             }
-        ]
+        ],
+        '@babel/plugin-syntax-dynamic-import'
     ]
 };
 

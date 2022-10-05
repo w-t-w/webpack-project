@@ -5,12 +5,13 @@ const webpack = require('webpack');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const CSSMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const PurgeCSSWebpackPlugin = require('purgecss-webpack-plugin').PurgeCSSPlugin;
+const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 
 const OUTPUT_DIR = path.resolve(process.cwd(), 'build');
 const STYLE_DIR = path.resolve(process.cwd(), 'src');
 const MANIFEST_DIR = path.resolve(process.cwd(), 'dist');
 
-const {entry, htmlWebpackPlugin} = require('s_mpa');
+const {entry, htmlWebpackPlugin} = require('./s_mpa');
 
 const baseConfig = {
     entry,
@@ -117,6 +118,7 @@ const baseConfig = {
         new PurgeCSSWebpackPlugin({
             paths: glob.sync(`${STYLE_DIR}/**/*`, {nodir: true})
         }),
+        new CleanWebpackPlugin(),
         ...htmlWebpackPlugin
     ],
     stats: {
