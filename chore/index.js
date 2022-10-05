@@ -55,7 +55,6 @@ const doShell = async () => {
     const _env = result['env'],
         _webpack = result['webpack'];
     command.push(dll, [env[_env], _env === 'development' ? config['dev_base'] : '', config[_webpack][_env]].join(' '));
-    console.log(command.join(' && '));
     exec(command.join('&&'), (err, result) => {
         console.log(err, result);
     });
