@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "node ./chore/index.js",
-    "commit": "git add . && git-cz && git push"
+    "commit": "git add . && git-cz && git push",
+    "release": "npx --no-install standard-version --preset gitmoji-config"
   },
   "repository": {
     "type": "git",
