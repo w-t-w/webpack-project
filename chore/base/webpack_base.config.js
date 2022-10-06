@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const CSSMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const ImageMinimizerWebpackPlugin = require('image-minimizer-webpack-plugin');
 const PurgeCSSWebpackPlugin = require('purgecss-webpack-plugin').PurgeCSSPlugin;
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 

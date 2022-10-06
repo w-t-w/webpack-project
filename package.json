@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "node ./chore/index.js",
-    "commit": "git add . && git-cz",
-    "release": "npx --no-install standard-version --preset gitmoji-config"
+    "commit": "git add . && git-cz && eslint --fix"
   },
   "repository": {
     "type": "git",
@@ -56,6 +55,7 @@
     "less": "^4.1.3",
     "less-loader": "^11.0.0",
     "mini-css-extract-plugin": "^2.6.1",
+    "mocha": "^10.0.0",
     "open": "^8.4.0",
     "postcss-loader": "^7.0.1",
     "postcss-preset-env": "^7.8.2",
@@ -70,6 +70,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
