@@ -14,10 +14,10 @@ const setS_MPA = () => {
 
     const pages = glob.sync(`${SRC_DIR}/**/index.js`);
 
-    pages.forEach(item => {
-        let point = null,
-            entryFile = null,
-            templateFile = null;
+    pages.forEach((item) => {
+        let point = null;
+        let entryFile = null;
+        let templateFile = null;
 
         if (pagesPoint.test(item)) {
             entryFile = item.match(pagesPoint)[0];
@@ -41,16 +41,16 @@ const setS_MPA = () => {
                     removeRedundantAttributes: true,
                     removeScriptTypeAttributes: true,
                     removeStyleLinkTypeAttributes: true,
-                    useShortDoctype: true
+                    useShortDoctype: true,
                 },
-                inject: 'body'
+                inject: 'body',
             })];
         }
     });
 
     return {
         entry,
-        htmlWebpackPlugin
+        htmlWebpackPlugin,
     };
 };
 

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "node ./chore/index.js",
-    "commit": "git add . && git-cz && eslint --fix"
+    "commit": "git add . && git-cz && eslint ./chore --fix"
   },
   "repository": {
     "type": "git",

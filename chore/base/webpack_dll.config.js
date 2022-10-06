@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const DIST_DIR = path.resolve(process.cwd(), 'dist');
 const MANIFEST_DIR = path.resolve(process.cwd(), 'dist');
@@ -10,24 +10,24 @@ const dllConfig = {
     mode: 'production',
     entry: [
         'react',
-        'react-dom'
+        'react-dom',
     ],
     stats: {
-        preset: 'minimal'
+        preset: 'minimal',
     },
     output: {
         publicPath: '',
         path: DIST_DIR,
         filename: '[name].[fullhash].js',
-        library: '[name]_[fullhash]'
+        library: '[name]_[fullhash]',
     },
     plugins: [
         new CleanWebpackPlugin(),
         new webpack.DllPlugin({
             name: '[name]_[fullhash]',
-            path: path.join(MANIFEST_DIR, 'manifest.json')
-        })
-    ]
+            path: path.join(MANIFEST_DIR, 'manifest.json'),
+        }),
+    ],
 };
 
 module.exports = dllConfig;

@@ -1,4 +1,4 @@
-const {merge} = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const open = require('open');
 
 const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -22,16 +22,16 @@ const devConfig = {
         historyApiFallback: true,
         open: {
             app: {
-                name: open.apps.chrome
-            }
+                name: open.apps.chrome,
+            },
         },
         proxy: {
-        }
+        },
     },
     plugins: [
         new BundleAnalyzer(),
-        new EslintWebpackPlugin()
-    ]
+        new EslintWebpackPlugin(),
+    ],
 };
 
 module.exports = merge(baseConfig, devConfig);
