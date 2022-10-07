@@ -7,9 +7,11 @@ const BASE_TEMPLATE_DIR = path.resolve(process.cwd(), 'src', 'index.ejs');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// eslint-disable-next-line
 const setS_MPA = () => {
     const entry = {};
     let htmlWebpackPlugin = [];
+    // eslint-disable-next-line
     const pagesPoint = /src[\/|\\]?(.*)[\/|\\].*\.js/;
 
     const pages = glob.sync(`${SRC_DIR}/**/index.js`);
@@ -20,11 +22,14 @@ const setS_MPA = () => {
         let templateFile = null;
 
         if (pagesPoint.test(item)) {
+            // eslint-disable-next-line
             entryFile = item.match(pagesPoint)[0];
+            // eslint-disable-next-line
             point = item.match(pagesPoint)[1];
             templateFile = path.resolve(process.cwd(), 'src', point, 'index.ejs');
 
             entryFile = path.relative(process.cwd(), entryFile);
+            // eslint-disable-next-line
             point = point.split(/[\/|\\]/g).join('_');
             templateFile = fs.existsSync(templateFile) ? templateFile : BASE_TEMPLATE_DIR;
 

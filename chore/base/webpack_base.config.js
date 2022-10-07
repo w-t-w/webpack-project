@@ -1,6 +1,7 @@
 const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
+const yargs = require('yargs');
 
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const CSSMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
@@ -13,6 +14,17 @@ const STYLE_DIR = path.resolve(process.cwd(), 'src');
 const MANIFEST_DIR = path.resolve(process.cwd(), 'dist');
 
 const { entry, htmlWebpackPlugin } = require('./s_mpa');
+const setMobile = require('./mobile');
+
+const argv = process.argv.slice(2);
+let env = '';
+yargs.parse(argv, (err, _argv) => {
+    if (err) {
+        throw new Error(err);
+    }
+    env = _argv.env;
+});
+const mobileConfig = setMobile(env);
 
 const baseConfig = {
     entry,
@@ -42,6 +54,41 @@ const baseConfig = {
         },
         minimizer: [
             new CSSMinimizerWebpackPlugin(),
+            new ImageMinimizerWebpackPlugin({
+                minimizer: {
+                    implementation: ImageMinimizerWebpackPlugin.imageminMinify,
+                    options: {
+                        plugins: [
+                            ['gifsicle', { interlaced: true }],
+                            ['jpegtran', { progressive: true }],
+                            ['optipng', { optimizationLevel: 5 }],
+                            // Svgo configuration here https://github.com/svg/svgo#configuration
+                            [
+                                'svgo',
+                                {
+                                    plugins: [
+                                        {
+                                            name: 'preset-default',
+                                            params: {
+                                                overrides: {
+                                                    removeViewBox: false,
+                                                    addAttributesToSVGElement: {
+                                                        params: {
+                                                            attributes: [
+                                                                { xmlns: 'http://www.w3.org/2000/svg' },
+                                                            ],
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    ],
+                                },
+                            ],
+                        ],
+                    },
+                },
+            }),
             '...',
         ],
     },
@@ -65,9 +112,9 @@ const baseConfig = {
             use: [MiniCSSExtractPlugin.loader, {
                 loader: 'css-loader',
                 options: {
-                    importLoaders: 1,
+                    importLoaders: 2,
                 },
-            }, {
+            }, mobileConfig.rules, {
                 loader: 'postcss-loader',
             }],
         }, {
@@ -75,9 +122,9 @@ const baseConfig = {
             use: [MiniCSSExtractPlugin.loader, {
                 loader: 'css-loader',
                 options: {
-                    importLoaders: 2,
+                    importLoaders: 3,
                 },
-            }, {
+            }, mobileConfig.rules, {
                 loader: 'postcss-loader',
             }, {
                 loader: 'less-loader',

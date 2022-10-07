@@ -3,6 +3,9 @@ const { exec } = require('shelljs');
 
 const prompt = inquirer.createPromptModule();
 
+const isMobile = 'mobile';
+const development = 'development';
+
 // dll 配置
 const dll = 'webpack --config=./chore/base/webpack_dll.config.js';
 
@@ -23,6 +26,12 @@ const config = {
         development: '--target=node',
         production: '--config=./chore/buildChore/webpack_ssr.config.js',
     },
+};
+
+// webpack 移动端适配文件
+const mobile = {
+    rem: '--env rem',
+    vh: '--env vh',
 };
 
 const doShell = async () => {
@@ -47,17 +56,39 @@ const doShell = async () => {
             'Node',
             'Electron',
             'Offline',
+            'mobile',
         ],
         filter(value) {
             return value.toLowerCase();
         },
     }]);
+    // eslint-disable-next-line
     const _env = result.env;
+    // eslint-disable-next-line
     const _webpack = result.webpack;
-    command.push(dll, [env[_env], _env === 'development' ? config.dev_base : '', config[_webpack][_env]].join(' '));
-    exec(command.join('&&'), (err, result) => {
-        console.log(err, result);
-    });
+    // eslint-disable-next-line
+    let _mobile = '';
+    // eslint-disable-next-line
+    if (_webpack === isMobile) {
+        const method = await prompt([{
+            name: 'mobile',
+            type: 'list',
+            message: '请选择移动端分辨率适配策略:',
+            choices: [
+                'rem',
+                'vh',
+            ],
+            filter(value) {
+                return value.toLowerCase();
+            },
+        }]);
+        _mobile = method.mobile;
+    }
+    // eslint-disable-next-line
+    const webpackConfig = config[_webpack] || config['s/mpa'];
+    // eslint-disable-next-line
+    command.push(dll, [env[_env], _env === development ? config.dev_base : '', webpackConfig[_env], _mobile ? mobile[_mobile] : ''].join(' '));
+    exec(command.join(' && '));
 };
 
 doShell();
