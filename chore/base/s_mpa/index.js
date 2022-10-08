@@ -49,7 +49,7 @@ const setS_MPA = (templateParameters) => {
                     useShortDoctype: true,
                 },
                 inject: 'body',
-                templateParameters
+                templateParameters,
             })];
         }
     });
@@ -60,4 +60,5 @@ const setS_MPA = (templateParameters) => {
     };
 };
 
+// eslint-disable-next-line
 module.exports = setS_MPA;
