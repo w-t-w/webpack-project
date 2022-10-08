@@ -13,6 +13,8 @@ const OUTPUT_DIR = path.resolve(process.cwd(), 'build');
 const STYLE_DIR = path.resolve(process.cwd(), 'src');
 const MANIFEST_DIR = path.resolve(process.cwd(), 'dist');
 
+const nextLoader = path.resolve(__dirname, './loaders/next-loader.js');
+
 const setMobile = require('./mobile');
 
 const argv = process.argv.slice(2);
@@ -24,12 +26,12 @@ yargs.parse(argv, (err, _argv) => {
     env = _argv.env;
 });
 const mobileConfig = setMobile(env);
+const mobileTemplateParameters = mobileConfig.templateParameters || '';
 
 // eslint-disable-next-line
 const setS_MPA = require('./s_mpa');
-
 const { entry, htmlWebpackPlugin } = setS_MPA({
-    mobile: mobileConfig.templateParameters,
+    mobile: mobileTemplateParameters,
 });
 
 const baseConfig = {
@@ -120,7 +122,9 @@ const baseConfig = {
                 options: {
                     importLoaders: 2,
                 },
-            }, mobileConfig.rules, {
+            }, mobileConfig.rules || {
+                loader: nextLoader,
+            }, {
                 loader: 'postcss-loader',
             }],
         }, {
@@ -130,7 +134,9 @@ const baseConfig = {
                 options: {
                     importLoaders: 3,
                 },
-            }, mobileConfig.rules, {
+            }, mobileConfig.rules || {
+                loader: nextLoader,
+            }, {
                 loader: 'postcss-loader',
             }, {
                 loader: 'less-loader',

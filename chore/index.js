@@ -31,7 +31,7 @@ const config = {
 // webpack 移动端适配文件
 const mobile = {
     rem: '--env rem',
-    vh: '--env vh',
+    vw: '--env vw',
 };
 
 const doShell = async () => {
@@ -76,7 +76,7 @@ const doShell = async () => {
             message: '请选择移动端分辨率适配策略:',
             choices: [
                 'rem',
-                'vh',
+                'vw',
             ],
             filter(value) {
                 return value.toLowerCase();

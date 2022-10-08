@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node ./test/smoke/index.js",
     "webpack": "node ./chore/index.js",
-    "commit": "git add . && git-cz && yarn run eslint",
+    "commit": "yarn run eslint && git add . && git-cz",
     "eslint": "eslint ./chore --fix"
   },
   "repository": {
@@ -52,6 +52,7 @@
     "mocha": "^10.0.0",
     "postcss-loader": "^7.0.1",
     "postcss-preset-env": "^7.8.2",
+    "postcss-px-to-viewport": "^1.1.1",
     "px2rem-loader": "^0.1.9",
     "raw-loader": "^4.0.2",
     "rimraf": "^3.0.2",

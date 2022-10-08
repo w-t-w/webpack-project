@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>library</title>
-    <% if(mobile) { %>
-        <script type="text/javascript"><%= require(mobile) %></script>
+    <% if (mobile && mobile === 'rem') { %>
+        <script><%= require('!raw-loader?esModule=false!babel-loader!lib-flexible/flexible.js') %></script>
     <% } %>
 </head>
 <body>
