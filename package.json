@@ -4,10 +4,11 @@
   "description": "webpack project test",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test/smoke/index.js",
     "webpack": "node ./chore/index.js",
-    "commit": "yarn run eslint && git add . && git-cz",
-    "eslint": "eslint ./chore --fix"
+    "commit": "yarn run eslint && yarn run smoke && git add . && git-cz",
+    "eslint": "eslint ./chore --fix",
+    "smoke": "eslint ./test/smoke --fix && node ./test/smoke/index.js",
+    "test": "node ./test/unit/index.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "conventional-changelog-gitmoji-config": "^1.4.3",
     "css-loader": "^6.7.1",
     "cz-custom": "^0.0.2",
+    "del": "^4.1.1",
     "eslint": "^8.24.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>library</title>
+    <% if (mobile && mobile === 'rem') { %>
+        <script><%= require('!raw-loader?esModule=false!babel-loader!lib-flexible/flexible.js') %></script>
+    <% } %>
+</head>
+<body>
+
+</body>
+</html>

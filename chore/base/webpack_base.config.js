@@ -25,7 +25,7 @@ yargs.parse(argv, (err, _argv) => {
     }
     env = _argv.env;
 });
-const mobileConfig = setMobile(env);
+const mobileConfig = setMobile(env) || {};
 const mobileTemplateParameters = mobileConfig.templateParameters || '';
 
 // eslint-disable-next-line
@@ -39,8 +39,8 @@ const baseConfig = {
     output: {
         publicPath: '',
         path: OUTPUT_DIR,
-        filename: '[name].[fullhash].js',
-        chunkFilename: '[name].[fullhash].js',
+        filename: 'js/[name].[fullhash].js',
+        chunkFilename: 'js/[name].[fullhash].js',
     },
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.css', '.less'],

@@ -35,9 +35,10 @@ const setS_MPA = (templateParameters) => {
 
             entry[point || 'index'] = `./${entryFile}`;
             htmlWebpackPlugin = [...htmlWebpackPlugin, new HtmlWebpackPlugin({
-                publicPath: '.',
+                // todo better resolve solution
+                publicPath: point ? '../' : '.',
                 template: templateFile,
-                filename: `${point || 'index'}.html`,
+                filename: `./${(point ? `${point}/` : point) || ''}index.html`,
                 chunks: ['commons', point || 'index'],
                 minify: {
                     collapseWhitespace: true,
