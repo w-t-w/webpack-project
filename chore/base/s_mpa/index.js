@@ -8,7 +8,7 @@ const BASE_TEMPLATE_DIR = path.resolve(process.cwd(), 'src', 'index.ejs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // eslint-disable-next-line
-const setS_MPA = () => {
+const setS_MPA = (templateParameters) => {
     const entry = {};
     let htmlWebpackPlugin = [];
     // eslint-disable-next-line
@@ -49,6 +49,7 @@ const setS_MPA = () => {
                     useShortDoctype: true,
                 },
                 inject: 'body',
+                templateParameters
             })];
         }
     });
@@ -59,4 +60,4 @@ const setS_MPA = () => {
     };
 };
 
-module.exports = setS_MPA();
+module.exports = setS_MPA;

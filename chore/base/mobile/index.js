@@ -7,10 +7,9 @@ const mobileConfig = {
                 remPrecision: 8,
             },
         },
+        templateParameters: `raw-loader?esModule=false!babel-loader!../../../../node_modules/lib-flexible/flexible`
     },
-    vh: {
-
-    },
+    vh: {},
 };
 
 const setMobile = (mobile) => mobileConfig[mobile];

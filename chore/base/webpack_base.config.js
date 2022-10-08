@@ -7,13 +7,12 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const CSSMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerWebpackPlugin = require('image-minimizer-webpack-plugin');
 const PurgeCSSWebpackPlugin = require('purgecss-webpack-plugin').PurgeCSSPlugin;
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 const OUTPUT_DIR = path.resolve(process.cwd(), 'build');
 const STYLE_DIR = path.resolve(process.cwd(), 'src');
 const MANIFEST_DIR = path.resolve(process.cwd(), 'dist');
 
-const { entry, htmlWebpackPlugin } = require('./s_mpa');
 const setMobile = require('./mobile');
 
 const argv = process.argv.slice(2);
@@ -25,6 +24,11 @@ yargs.parse(argv, (err, _argv) => {
     env = _argv.env;
 });
 const mobileConfig = setMobile(env);
+
+const setS_MPA = require('./s_mpa');
+const {entry, htmlWebpackPlugin} = setS_MPA({
+    mobile: mobileConfig.templateParameters
+});
 
 const baseConfig = {
     entry,
@@ -59,9 +63,9 @@ const baseConfig = {
                     implementation: ImageMinimizerWebpackPlugin.imageminMinify,
                     options: {
                         plugins: [
-                            ['gifsicle', { interlaced: true }],
-                            ['jpegtran', { progressive: true }],
-                            ['optipng', { optimizationLevel: 5 }],
+                            ['gifsicle', {interlaced: true}],
+                            ['jpegtran', {progressive: true}],
+                            ['optipng', {optimizationLevel: 5}],
                             // Svgo configuration here https://github.com/svg/svgo#configuration
                             [
                                 'svgo',
@@ -75,7 +79,7 @@ const baseConfig = {
                                                     addAttributesToSVGElement: {
                                                         params: {
                                                             attributes: [
-                                                                { xmlns: 'http://www.w3.org/2000/svg' },
+                                                                {xmlns: 'http://www.w3.org/2000/svg'},
                                                             ],
                                                         },
                                                     },
@@ -164,7 +168,7 @@ const baseConfig = {
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         new PurgeCSSWebpackPlugin({
-            paths: glob.sync(`${STYLE_DIR}/**/*`, { nodir: true }),
+            paths: glob.sync(`${STYLE_DIR}/**/*`, {nodir: true}),
         }),
         new CleanWebpackPlugin(),
         ...htmlWebpackPlugin,
