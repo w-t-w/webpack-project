@@ -5,7 +5,7 @@ describe('检查是否存在 DllPlugin 生产的 manifest.json 预编译文件:'
     // eslint-disable-next-line
     it('通过运行 webpack_dll.config.js 施行检查:', (done) => {
         const files = glob.sync([
-            './dist/*.json',
+            './build/vendors/*.json',
         ]);
         if (files.length > 0) {
             done();

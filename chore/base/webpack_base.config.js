@@ -10,8 +10,8 @@ const PurgeCSSWebpackPlugin = require('purgecss-webpack-plugin').PurgeCSSPlugin;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const OUTPUT_DIR = path.resolve(process.cwd(), 'build');
-const STYLE_DIR = path.resolve(process.cwd(), 'src');
-const MANIFEST_DIR = path.resolve(process.cwd(), 'dist');
+const SRC_DIR = path.resolve(process.cwd(), 'src');
+const MANIFEST_FILE = require(path.resolve(process.cwd(), 'build', 'vendors', 'manifest.json'));
 
 const nextLoader = path.resolve(__dirname, './loaders/next-loader.js');
 
@@ -32,6 +32,7 @@ const mobileTemplateParameters = mobileConfig.templateParameters || '';
 const setS_MPA = require('./s_mpa');
 const { entry, htmlWebpackPlugin } = setS_MPA({
     mobile: mobileTemplateParameters,
+    vendors: './vendors/vendors.dll.js',
 });
 
 const baseConfig = {
@@ -168,17 +169,29 @@ const baseConfig = {
         }],
     },
     plugins: [
-        new webpack.DllReferencePlugin({
-            manifest: path.join(MANIFEST_DIR, 'manifest.json'),
-        }),
         new MiniCSSExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         new PurgeCSSWebpackPlugin({
-            paths: glob.sync(`${STYLE_DIR}/**/*`, { nodir: true }),
+            paths: glob.sync(`${SRC_DIR}/**/*`, { nodir: true }),
         }),
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [
+                '!vendors/**',
+                'js/**',
+                'css/**',
+                'assets/**',
+                '*.html',
+            ],
+            cleanAfterEveryBuildPatterns: [
+                '!vendors/**',
+            ],
+        }),
+        new webpack.DllReferencePlugin({
+            context: process.cwd(),
+            manifest: MANIFEST_FILE,
+        }),
         ...htmlWebpackPlugin,
     ],
     stats: {

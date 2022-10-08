@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const glob = require('glob-all');
 const { exec } = require('shelljs');
 
 const prompt = inquirer.createPromptModule();
@@ -6,8 +7,10 @@ const prompt = inquirer.createPromptModule();
 const isMobile = 'mobile';
 const development = 'development';
 
+const manifestFile = glob.sync(['./build/vendors/*.json']);
+
 // dll 配置
-const dll = 'webpack --config=./chore/base/webpack_dll.config.js';
+const dll = (manifestFile && manifestFile.length > 0) ? '' : 'webpack --config=./chore/base/webpack_dll.config.js';
 
 // 所属环境
 const env = {
@@ -88,6 +91,7 @@ const doShell = async () => {
     const webpackConfig = config[_webpack] || config['s/mpa'];
     // eslint-disable-next-line
     command.push(dll, [env[_env], _env === development ? config.dev_base : '', webpackConfig[_env], _mobile ? mobile[_mobile] : ''].join(' '));
+    !dll && command.shift();
     exec(command.join(' && '));
 };
 

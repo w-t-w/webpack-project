@@ -1,4 +1,12 @@
-import './index.less';
+import { createRoot } from 'react-dom/client';
 
-// eslint-disable-next-line
-console.log('I love China~');
+import App from './containers/app';
+
+function Root() {
+    return (
+        <App name="wtw" />
+    );
+}
+
+const root = createRoot(document.getElementById('root'));
+root.render(<Root />);

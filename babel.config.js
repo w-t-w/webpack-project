@@ -6,24 +6,24 @@ const babelConfig = {
             useBuiltIns: 'usage',
             corejs: {
                 version: 3,
-                proposal: true
-            }
-        }
+                proposal: true,
+            },
+        },
     ], [
         '@babel/preset-react', {
-            runtime: 'automatic'
-        }
+            runtime: 'automatic',
+        },
     ]],
     plugins: [
         '@babel/plugin-proposal-class-properties',
         [
             '@babel/plugin-proposal-decorators',
             {
-                legacy: true
-            }
+                legacy: true,
+            },
         ],
-        '@babel/plugin-syntax-dynamic-import'
-    ]
+        '@babel/plugin-syntax-dynamic-import',
+    ],
 };
 
 module.exports = babelConfig;
