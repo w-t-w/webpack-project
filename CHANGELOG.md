@@ -8,7 +8,6 @@ All notable changes to this project will be documented in this file. See [standa
 ### ⚡ Performance Improvements
 
 * 优化 conventional-changelog-gitmoji-config 流程 ([7fe5db7](https://github-w-t-w/w-t-w/webpack-project/commit/7fe5db7))
-* 优化 conventional-changelog-gitmoji-config 流程 ([e5d4e12](https://github-w-t-w/w-t-w/webpack-project/commit/e5d4e12))
 
 
 ### ✅ Tests
@@ -19,7 +18,6 @@ All notable changes to this project will be documented in this file. See [standa
 ### 🎫 Chores
 
 * rem 移动端分辨率适配 webpack 配置完成 ([1e289ce](https://github-w-t-w/w-t-w/webpack-project/commit/1e289ce))
-* rem 移动端分辨率适配 webpack 配置完成 ([c4bc49a](https://github-w-t-w/w-t-w/webpack-project/commit/c4bc49a))
 * vw 移动端分辨率适配 webpack 配置完成 ([691df46](https://github-w-t-w/w-t-w/webpack-project/commit/691df46))
 * 搭建测试、移动端分辨率适配环境 ([aa2707a](https://github-w-t-w/w-t-w/webpack-project/commit/aa2707a))
 
