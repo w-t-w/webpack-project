@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "node ./chore/index.js",
-    "commit": "yarn run eslint && yarn run smoke && git add . && git-cz",
+    "commit": "source ./command/commitlintSource.bash && yarn run eslint && yarn run smoke && git add . && git-cz",
     "eslint": "eslint ./chore --fix",
     "smoke": "eslint ./test/smoke --fix && node ./test/smoke/index.js",
     "test": "node ./test/unit/index.js"
@@ -65,6 +65,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.3",
+    "autoprefixer": "^10.4.12",
     "clean-webpack-plugin": "^4.0.0",
     "css-minimizer-webpack-plugin": "^4.2.0",
     "eslint-webpack-plugin": "^3.2.0",
@@ -84,6 +86,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
     "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
     "shelljs": "^0.8.5",
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.6.1",

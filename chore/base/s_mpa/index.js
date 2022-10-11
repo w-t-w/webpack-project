@@ -12,9 +12,9 @@ const setS_MPA = (templateParameters) => {
     const entry = {};
     let htmlWebpackPlugin = [];
     // eslint-disable-next-line
-    const pagesPoint = /src[\/|\\]?(.*)[\/|\\].*\.js/;
+    const pagesPoint = /src[\/|\\]?(.*)[\/|\\].*\.ejs/;
 
-    const pages = glob.sync(`${SRC_DIR}/**/index.js`);
+    const pages = glob.sync(`${SRC_DIR}/**/index.ejs`);
 
     pages.forEach((item) => {
         let point = null;
@@ -23,12 +23,11 @@ const setS_MPA = (templateParameters) => {
 
         if (pagesPoint.test(item)) {
             // eslint-disable-next-line
-            entryFile = item.match(pagesPoint)[0];
+            templateFile = path.resolve(process.cwd(), item.match(pagesPoint)[0]);
             // eslint-disable-next-line
             point = item.match(pagesPoint)[1];
-            templateFile = path.resolve(process.cwd(), 'src', point, 'index.ejs');
+            entryFile = path.relative(process.cwd(), `src/${point}/index.js`);
 
-            entryFile = path.relative(process.cwd(), entryFile);
             // eslint-disable-next-line
             point = point.split(/[\/|\\]/g).join('_');
             templateFile = fs.existsSync(templateFile) ? templateFile : BASE_TEMPLATE_DIR;
@@ -38,7 +37,7 @@ const setS_MPA = (templateParameters) => {
                 // todo better resolve solution
                 publicPath: point ? '../' : '.',
                 template: templateFile,
-                filename: `./${(point ? `${point}/` : point) || ''}index.html`,
+                filename: `./${point ? `${point}/` : point}index.html`,
                 chunks: ['commons', point || 'index'],
                 minify: {
                     collapseWhitespace: true,
@@ -60,6 +59,8 @@ const setS_MPA = (templateParameters) => {
         htmlWebpackPlugin,
     };
 };
+
+setS_MPA({});
 
 // eslint-disable-next-line
 module.exports = setS_MPA;

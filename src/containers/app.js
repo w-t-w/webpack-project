@@ -1,15 +1,42 @@
-// eslint-disable-next-line
-import { useState, useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
+import { connect } from 'react-redux';
 
-// eslint-disable-next-line
+import { add, shift } from './app_action';
+
+import './app.less';
+
 function App(props) {
-    // eslint-disable-next-line
+    const {
+        app,
+        addCount,
+        shiftCount,
+    } = props;
+    const {
+        count = 0,
+    } = app;
+    const addCountCallback = useCallback(() => {
+        addCount(count + 1);
+    }, [count]);
+    const shiftCountCallback = useCallback(() => {
+        shiftCount(count - 1);
+    }, [count]);
     return (
-        <div>
-            hh~
-        </div>
+        <section>
+            <input value={count} disabled />
+            <button type="button" onClick={addCountCallback}>+</button>
+            <button type="button" onClick={shiftCountCallback}>-</button>
+        </section>
     );
 }
 
-// eslint-disable-next-line
-export default App;
+export default connect((state, ownProps) => ({
+    ...state,
+    ...ownProps,
+}), (dispatch) => ({
+    addCount(count) {
+        dispatch(add({ count }));
+    },
+    shiftCount(count) {
+        dispatch(shift({ count }));
+    },
+}))(App);

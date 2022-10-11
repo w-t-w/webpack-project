@@ -37,7 +37,7 @@ const czConfig = {
         subject: '请简要描述本次提交(必填):',
         body: '请对本次提交作详细描述:',
         breaking: '请对本次提交与当前 API 产生比较大的不兼容作详细描述:',
-        footer: '请输入本次提交删除的所对应的 issue:',
+        footer: '请对本次提交删除的所对应的 issue 作详细描述:',
         confirmCommit: '是否确认提交以上选择输入?'
     },
     scopes: [{name: 'components       [组件部分]'}, {name: 'hooks            [hooks部分]'}, {name: 'logics           [代码逻辑部分]'}],

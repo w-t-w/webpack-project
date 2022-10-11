@@ -24,7 +24,7 @@ del(['./dist', './build']).then(() => {
         }), '\n');
         mocha.addFile(path.resolve(__dirname, './dll/manifest-json-test.js'));
         // eslint-disable-next-line
-        webpack(prodConfig, (err, stats) => {
+        webpack(prodConfig({}), (err, stats) => {
             if (err) {
                 // eslint-disable-next-line
                 console.error(err);

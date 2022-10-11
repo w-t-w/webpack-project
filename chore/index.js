@@ -23,7 +23,7 @@ const config = {
     dev_base: '--config=./chore/buildChore/webpack_dev.config.js',
     's/mpa': {
         development: '--target=web',
-        production: '--config=./chore/buildChore/webpack_prod.config.js',
+        production: '--config=./chore/buildChore/webpack_prod.config.js --env params.plugins.bundleAnalyzer',
     },
     node: {
         development: '--target=node',
@@ -33,8 +33,8 @@ const config = {
 
 // webpack 移动端适配文件
 const mobile = {
-    rem: '--env rem',
-    vw: '--env vw',
+    rem: '--env params.mobile="rem"',
+    vw: '--env params.mobile="vw"',
 };
 
 const doShell = async () => {

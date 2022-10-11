@@ -10,6 +10,19 @@ const mobileConfig = {
         templateParameters: 'rem',
     },
     vw: {
+        postcssOptions: {
+            plugins: [
+                [
+                    'postcss-px-to-viewport',
+                    {
+                        unitToConvert: 'px',
+                        viewportUnit: 'vw',
+                        viewportWidth: 750,
+                        unitPrecision: 8,
+                    },
+                ],
+            ],
+        },
     },
 };
 

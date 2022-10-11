@@ -1,10 +1,12 @@
-const { merge } = require('webpack-merge');
 const open = require('open');
+const path = require('path');
+const { merge } = require('webpack-merge');
 
-const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = require('../base/webpack_base.config');
+
+const STATIC_DIR = path.resolve(process.cwd(), './build');
 
 const PORT = 7777;
 
@@ -20,6 +22,7 @@ const devConfig = {
         port: PORT,
         hot: true,
         historyApiFallback: true,
+        static: STATIC_DIR,
         open: {
             app: {
                 name: open.apps.chrome,
@@ -29,9 +32,8 @@ const devConfig = {
         },
     },
     plugins: [
-        new BundleAnalyzer(),
         new EslintWebpackPlugin(),
     ],
 };
 
-module.exports = merge(baseConfig, devConfig);
+module.exports = (env) => merge(baseConfig(env), devConfig);

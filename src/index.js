@@ -1,10 +1,14 @@
 import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 
+import store from './store';
 import App from './containers/app';
 
 function Root() {
     return (
-        <App name="wtw" />
+        <Provider store={store}>
+            <App name="wtw" />
+        </Provider>
     );
 }
 
