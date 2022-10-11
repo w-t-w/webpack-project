@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.4](https://github-w-t-w/w-t-w/webpack-project/compare/v0.0.3...v0.0.4) (2022-10-11)
+
+
+### ⚡ Performance Improvements
+
+* 对抽取公有依赖以及清理资源进行优化 ([82562d1](https://github-w-t-w/w-t-w/webpack-project/commit/82562d1))
+
+
+### 🎫 Chores
+
+* 优化处理打包流程,优化命令行传参 ([ba8720a](https://github-w-t-w/w-t-w/webpack-project/commit/ba8720a))
+
+
+### 📝 Documentation
+
+* 优化文档 ([a958644](https://github-w-t-w/w-t-w/webpack-project/commit/a958644))
+
+
+
 ## [0.0.3](https://github-w-t-w/w-t-w/webpack-project/compare/v0.0.2...v0.0.3) (2022-10-08)
 
 
