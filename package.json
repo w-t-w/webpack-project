@@ -8,7 +8,8 @@
     "commit": "yarn run test && source ./bash/commitlint-config.bash && git add . && git cz",
     "dll": "webpack --config=./chore/base/dll/webpack.dll.js",
     "eslint": "eslint --fix",
-    "test": "yarn run eslint && mocha ./test/index.js"
+    "test": "yarn run eslint && mocha ./test/index.js",
+    "release": "git push"
   },
   "repository": {
     "type": "git",
