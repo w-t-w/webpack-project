@@ -1,9 +1,15 @@
 import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 
-import App from './app';
+import App from './containers/app';
+import store from './containers/stores';
 
 import './styles/index.less';
 
 const root = createRoot(document.getElementById('root'));
 
-root.render(<App />);
+root.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+);

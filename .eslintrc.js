@@ -10,6 +10,10 @@ const eslintrc = {
         'react/jsx-filename-extension': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-indent': ['error', 4],
+        'react/prop-types': 'off',
+        'default-param-last': 'off',
+        'import/prefer-default-export': 'off',
+        'prefer-destructuring': 'off',
     },
 };
 
