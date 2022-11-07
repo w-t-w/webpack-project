@@ -1,6 +1,6 @@
 {
   "name": "webpack-project",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "create webpack project",
   "main": "index.js",
   "scripts": {
