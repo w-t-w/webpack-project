@@ -93,6 +93,8 @@ module.exports = function baseConfig(env) {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
                 use: [{
+                    loader: 'thread-loader'
+                }, {
                     loader: 'babel-loader',
                     options: {
                         cacheDirectory: true,
