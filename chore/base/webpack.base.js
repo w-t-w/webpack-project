@@ -162,7 +162,6 @@ module.exports = function baseConfig(env) {
             new PurgeCSSWebpackPlugin({
                 paths: glob.sync(resolve(process.cwd(), './src/**/'), { nodir: true }),
             }),
-            new EslintWebpackPlugin(),
             ...htmlWebpackPlugin,
         ],
     };

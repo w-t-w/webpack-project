@@ -17,7 +17,7 @@ const utils = {
                 loader: {
                     loader: 'px2rem-loader',
                     options: {
-                        remUnit: 75,
+                        remUnit: 20,
                         remPrecision: 8,
                     },
                 },

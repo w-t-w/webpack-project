@@ -1,7 +1,9 @@
-import luffy from './source/luffy.jpeg';
-import zero from './source/zero.jpeg';
+import back from './source/back.png';
+import question from './source/question.png';
+import forward from './source/forward.png';
 
 export {
-    luffy,
-    zero,
+    back,
+    question,
+    forward
 };
