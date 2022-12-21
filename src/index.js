@@ -31,13 +31,14 @@ const App = () => {
                 </div>
                 <div className='container-header-total'>
                     <div className='container-header-total-price'>
-                        <span className='container-header-total-price-personal'>收入合计<img src={question} alt='question'/>：</span>
-                        <span>294230.77元</span>
+                        <span className='container-header-total-price-personal'>收入合计<img src={question}
+                                                                                             alt='question'/>：</span>
+                        <span>234998.65元</span>
                     </div>
                     <hr className='container-header-total-price-line'/>
                     <div className='container-header-total-price'>
                         <span>已申报税额合计：</span>
-                        <span>14051.15元</span>
+                        <span>8321.92元</span>
                     </div>
                 </div>
             </div>
@@ -45,30 +46,7 @@ const App = () => {
                 <div className='container-content-item'>
                     <div className='container-content-item-header'>
                         <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-11</span>
-                    </div>
-                    <div className='container-content-item-main'>
-                        <div className='container-content-item-main-count'>
-                            所得项目小类：正常工资薪金
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            扣缴义务人：上海界众网络科技有限公司
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            收入: 19230.77元
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            已申报税额：1696.15元
-                        </div>
-                    </div>
-                    <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
-                    </div>
-                </div>
-                <div className='container-content-item'>
-                    <div className='container-content-item-header'>
-                        <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-10</span>
+                        <span className='container-content-item-month'>2021-12</span>
                     </div>
                     <div className='container-content-item-main'>
                         <div className='container-content-item-main-count'>
@@ -81,17 +59,17 @@ const App = () => {
                             收入：25000.00元
                         </div>
                         <div className='container-content-item-main-count'>
-                            已申报税额：1412.50元
+                            已申报税额：1562.50元
                         </div>
                     </div>
                     <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
+                        <img src={forward} alt='forward'/>
                     </div>
                 </div>
                 <div className='container-content-item'>
                     <div className='container-content-item-header'>
                         <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-09</span>
+                        <span className='container-content-item-month'>2021-11</span>
                     </div>
                     <div className='container-content-item-main'>
                         <div className='container-content-item-main-count'>
@@ -101,112 +79,20 @@ const App = () => {
                             扣缴义务人：上海界众网络科技有限公司
                         </div>
                         <div className='container-content-item-main-count'>
-                            收入: 25000.00元
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            已申报税额：1412.50元
-                        </div>
-                    </div>
-                    <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
-                    </div>
-                </div>
-                <div className='container-content-item'>
-                    <div className='container-content-item-header'>
-                        <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-08</span>
-                    </div>
-                    <div className='container-content-item-main'>
-                        <div className='container-content-item-main-count'>
-                            所得项目小类：正常工资薪金
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            扣缴义务人：上海界众网络科技有限公司
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            收入: 25000.00元
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            已申报税额：1412.50元
-                        </div>
-                    </div>
-                    <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
-                    </div>
-                </div>
-                <div className='container-content-item'>
-                    <div className='container-content-item-header'>
-                        <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-07</span>
-                    </div>
-                    <div className='container-content-item-main'>
-                        <div className='container-content-item-main-count'>
-                            <span>所得项目小类：正常工资薪金</span>
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            扣缴义务人：上海界众网络科技有限公司
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            收入: 25000.00元
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            已申报税额：1412.50元
-                        </div>
-                    </div>
-                    <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
-                    </div>
-                </div>
-                <div className='container-content-item'>
-                    <div className='container-content-item-header'>
-                        <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-06</span>
-                    </div>
-                    <div className='container-content-item-main'>
-                        <div className='container-content-item-main-count'>
-                            所得项目小类：正常工资薪金
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            扣缴义务人：上海界众网络科技有限公司
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            收入: 25000.00元
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            已申报税额：662.50元
-                        </div>
-                    </div>
-                    <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
-                    </div>
-                </div>
-                <div className='container-content-item'>
-                    <div className='container-content-item-header'>
-                        <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-05</span>
-                    </div>
-                    <div className='container-content-item-main'>
-                        <div className='container-content-item-main-count'>
-                            所得项目小类：正常工资薪金
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            扣缴义务人：上海界众网络科技有限公司
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            收入: 25000.00元
+                            收入：25000.00元
                         </div>
                         <div className='container-content-item-main-count'>
                             已申报税额：1562.50元
                         </div>
                     </div>
                     <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
+                        <img src={forward} alt='forward'/>
                     </div>
                 </div>
                 <div className='container-content-item'>
                     <div className='container-content-item-header'>
                         <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-04</span>
+                        <span className='container-content-item-month'>2021-10</span>
                     </div>
                     <div className='container-content-item-main'>
                         <div className='container-content-item-main-count'>
@@ -216,43 +102,20 @@ const App = () => {
                             扣缴义务人：上海界众网络科技有限公司
                         </div>
                         <div className='container-content-item-main-count'>
-                            收入: 25000.00元
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            已申报税额：1562.50元
-                        </div>
-                    </div>
-                    <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
-                    </div>
-                </div>
-                <div className='container-content-item'>
-                    <div className='container-content-item-header'>
-                        <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-03</span>
-                    </div>
-                    <div className='container-content-item-main'>
-                        <div className='container-content-item-main-count'>
-                            所得项目小类：正常工资薪金
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            扣缴义务人：上海界众网络科技有限公司
-                        </div>
-                        <div className='container-content-item-main-count'>
-                            收入: 25000.00元
+                            收入：25000.00元
                         </div>
                         <div className='container-content-item-main-count'>
                             已申报税额：1230.00元
                         </div>
                     </div>
                     <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
+                        <img src={forward} alt='forward'/>
                     </div>
                 </div>
                 <div className='container-content-item'>
                     <div className='container-content-item-header'>
                         <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-02</span>
+                        <span className='container-content-item-month'>2021-09</span>
                     </div>
                     <div className='container-content-item-main'>
                         <div className='container-content-item-main-count'>
@@ -262,20 +125,20 @@ const App = () => {
                             扣缴义务人：上海界众网络科技有限公司
                         </div>
                         <div className='container-content-item-main-count'>
-                            收入: 25000.00元
+                            收入：25000.00元
                         </div>
                         <div className='container-content-item-main-count'>
                             已申报税额：468.75元
                         </div>
                     </div>
                     <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
+                        <img src={forward} alt='forward'/>
                     </div>
                 </div>
                 <div className='container-content-item'>
                     <div className='container-content-item-header'>
                         <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-01</span>
+                        <span className='container-content-item-month'>2021-08</span>
                     </div>
                     <div className='container-content-item-main'>
                         <div className='container-content-item-main-count'>
@@ -285,37 +148,152 @@ const App = () => {
                             扣缴义务人：上海界众网络科技有限公司
                         </div>
                         <div className='container-content-item-main-count'>
-                            收入: 25000.00元
+                            收入：25000.00元
                         </div>
                         <div className='container-content-item-main-count'>
                             已申报税额：468.75元
                         </div>
                     </div>
                     <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
+                        <img src={forward} alt='forward'/>
                     </div>
                 </div>
                 <div className='container-content-item'>
                     <div className='container-content-item-header'>
                         <span>工资薪金</span>
-                        <span className='container-content-item-month'>2022-01</span>
+                        <span className='container-content-item-month'>2021-05</span>
+                    </div>
+                    <div className='container-content-item-main'>
+                        <div className='container-content-item-main-count'>
+                            所得项目小类：正常工资薪金
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            扣缴义务人：虎扑（上海）文化传播股...
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            收入：3120.00元
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            已申报税额：0.00元
+                        </div>
+                    </div>
+                    <div className='container-content-item-forward'>
+                        <img src={forward} alt='forward'/>
+                    </div>
+                </div>
+                <div className='container-content-item'>
+                    <div className='container-content-item-header'>
+                        <span>工资薪金</span>
+                        <span className='container-content-item-month'>2021-04</span>
+                    </div>
+                    <div className='container-content-item-main'>
+                        <div className='container-content-item-main-count'>
+                            所得项目小类：正常工资薪金
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            扣缴义务人：虎扑（上海）文化传播股...
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            收入：19643.68元
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            已申报税额：1114.37元
+                        </div>
+                    </div>
+                    <div className='container-content-item-forward'>
+                        <img src={forward} alt='forward'/>
+                    </div>
+                </div>
+                <div className='container-content-item'>
+                    <div className='container-content-item-header'>
+                        <span>工资薪金</span>
+                        <span className='container-content-item-month'>2021-03</span>
+                    </div>
+                    <div className='container-content-item-main'>
+                        <div className='container-content-item-main-count'>
+                            所得项目小类：正常工资薪金
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            扣缴义务人：虎扑（上海）文化传播股...
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            收入：20800.00元
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            已申报税额：432.00元
+                        </div>
+                    </div>
+                    <div className='container-content-item-forward'>
+                        <img src={forward} alt='forward'/>
+                    </div>
+                </div>
+                <div className='container-content-item'>
+                    <div className='container-content-item-header'>
+                        <span>工资薪金</span>
+                        <span className='container-content-item-month'>2021-02</span>
+                    </div>
+                    <div className='container-content-item-main'>
+                        <div className='container-content-item-main-count'>
+                            所得项目小类：正常工资薪金
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            扣缴义务人：虎扑（上海）文化传播股...
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            收入： 20800.00元
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            已申报税额：369.00元
+                        </div>
+                    </div>
+                    <div className='container-content-item-forward'>
+                        <img src={forward} alt='forward'/>
+                    </div>
+                </div>
+                <div className='container-content-item'>
+                    <div className='container-content-item-header'>
+                        <span>工资薪金</span>
+                        <span className='container-content-item-month'>2021-01</span>
+                    </div>
+                    <div className='container-content-item-main'>
+                        <div className='container-content-item-main-count'>
+                            所得项目小类：正常工资薪金
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            扣缴义务人：虎扑（上海）文化传播股...
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            收入： 20800.00元
+                        </div>
+                        <div className='container-content-item-main-count'>
+                            已申报税额：369.00元
+                        </div>
+                    </div>
+                    <div className='container-content-item-forward'>
+                        <img src={forward} alt='forward'/>
+                    </div>
+                </div>
+                <div className='container-content-item'>
+                    <div className='container-content-item-header'>
+                        <span>工资薪金</span>
+                        <span className='container-content-item-month'>2021-01</span>
                     </div>
                     <div className='container-content-item-main'>
                         <div className='container-content-item-main-count'>
                             所得项目小类：全年一次性奖金收入
                         </div>
                         <div className='container-content-item-main-count'>
-                            扣缴义务人：上海界众网络科技有限公司
+                            扣缴义务人：虎扑（上海）文化传播股...
                         </div>
                         <div className='container-content-item-main-count'>
-                            收入: 25000.00元
+                            收入： 24834.97元
                         </div>
                         <div className='container-content-item-main-count'>
-                            已申报税额：750.00元
+                            已申报税额：745.05元
                         </div>
                     </div>
                     <div className='container-content-item-forward'>
-                        <img src={forward} alt='forward' />
+                        <img src={forward} alt='forward'/>
                     </div>
                 </div>
             </div>
