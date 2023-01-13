@@ -1,0 +1,28 @@
+{
+  "name": "webpack-project",
+  "description": "webpack project",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {
+    "inquirer": "^8.2.5",
+    "jszip": "^3.10.1",
+    "shelljs": "^0.8.5",
+    "spritesmith": "^3.4.0"
+  },
+  "scripts": {
+    "webpack": "node ./chore/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w-t-w/webpack-project.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "wtw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w-t-w/webpack-project/issues"
+  },
+  "homepage": "https://github.com/w-t-w/webpack-project#readme"
+}
