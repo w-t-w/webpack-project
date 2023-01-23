@@ -10,6 +10,8 @@ const EslintWebpackPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const PurgeCSSWebpackPlugin = require('purgecss-webpack-plugin').PurgeCSSPlugin;
 
+const { ZipPlugin } = require('./plugin');
+
 const { prompt: { mobileEnum } } = require('../config');
 const { sMpa } = require('./util');
 
@@ -233,6 +235,7 @@ module.exports = ({ env: mode, mobile }) => {
             new PurgeCSSWebpackPlugin({
                 paths: glob.sync(path.resolve(process.cwd(), './src/**'), { nodir: true }),
             }),
+            new ZipPlugin('wtw_zip'),
             ...htmlWebpackPlugin,
         ],
     };

@@ -14,6 +14,7 @@ const eslintrcConfig = {
         'no-restricted-syntax': 'off',
         'consistent-return': 'off',
         'class-methods-use-this': 'off',
+        'no-param-reassign': 'off',
     },
 };
 
