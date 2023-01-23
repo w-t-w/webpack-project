@@ -1,7 +1,7 @@
 {
   "name": "webpack-project",
   "description": "webpack project",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "devDependencies": {
     "@babel/cli": "^7.20.7",
