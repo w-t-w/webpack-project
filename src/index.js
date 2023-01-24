@@ -10,9 +10,11 @@ function App() {
 
     return (
         <div className="container">
+            <div className="luffy" />
             <img src={`${isBase64Config(assets.images.luffy, window.hackPath)}${assets.images.luffy}`} alt="luffy" />
             1234567890
             <img src={`${isBase64Config(assets.images.zero, window.hackPath)}${assets.images.zero}`} alt="zero" />
+            <div className="zero" />
         </div>
     );
 }

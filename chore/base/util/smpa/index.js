@@ -8,7 +8,7 @@ const sMpa = (templateParams) => {
     const entry = {};
     const htmlWebpackPlugin = [];
     const templatePaths = glob.sync(path.resolve(process.cwd(), './src/**/index.ejs'));
-    const entryPoint = /src[/|\\]?(.*)[/|\\]index/u;
+    const entryPoint = /src[/|\\]?(.*)[/|\\]index/;
     for (const templatePath of templatePaths) {
         // eslint-disable-next-line
         let [entryValue, entryKey] = entryPoint.exec(templatePath);

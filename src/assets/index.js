@@ -1,5 +1,5 @@
-import luffy from './images/luffy.png';
-import zero from './images/zero.png';
+import luffy from './images/luffy.jpeg';
+import zero from './images/zero.jpeg';
 
 export default {
     images: {

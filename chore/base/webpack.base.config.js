@@ -199,7 +199,7 @@ module.exports = ({ env: mode, mobile }) => {
                 },
                 parser: {
                     dataUrlCondition: {
-                        maxSize: 10 * 1024,
+                        maxSize: 5 * 1024,
                     },
                 },
             }, {

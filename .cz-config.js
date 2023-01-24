@@ -29,6 +29,12 @@ const czConfig = {
     }, {
         name: '👷 ci =>【CI related changes】',
         value: ':construction_worker: ci'
+    }, {
+        name: '⏪️ revert =>【回退】',
+        value: ':rewind: revert'
+    }, {
+        name: '🏗️wip =>【建设进程中】',
+        value: ':building_construction: wip'
     }],
     scopes: [{name: 'components scopes     【组件】'}, {name: 'hooks scopes          【hooks】'}, {name: 'logic scopes          【业务逻辑】'}],
     allowCustomScopes: true,
